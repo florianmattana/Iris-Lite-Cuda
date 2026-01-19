@@ -1,0 +1,44 @@
+# --- Build outputs ---
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+*.ninja
+.ninja_*
+rules.ninja
+*.dir/
+
+# --- Compiled binaries / debug ---
+*.exe
+*.dll
+*.lib
+*.exp
+*.pdb
+*.ilk
+*.obj
+*.o
+*.a
+*.so
+*.dylib
+
+# --- CUDA / NVCC intermediate ---
+*.ptx
+*.cubin
+*.fatbin
+tmpxft_*
+*.cudafe1.cpp
+*.cudafe1.gpu
+*.cudafe1.stub.c
+*.cu.cpp
+
+# --- IDE / editor ---
+.vscode/
+.vs/
+*.user
+*.suo
+
+# --- OS ---
+.DS_Store
+Thumbs.db
