@@ -1,5 +1,6 @@
 #include<cuda_runtime.h>
 #include<camera_config.h>
+#include<camera_invariants.h>
 
 void init_camera (SystemConfig &systemConfig)
 {
@@ -24,7 +25,6 @@ void init_camera (SystemConfig &systemConfig)
         cam.rotation[6] = 0.0; 
         cam.rotation[7] = 1.0; 
         cam.rotation[8] = 1.0; 
-        cam.rotation[9] = 0.0; 
 
         cam.width = 1024;
         cam.height = 1024;
