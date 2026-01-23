@@ -19,3 +19,5 @@ struct SystemConfig
     int num_cameras; //enabled
     CameraConfig cameras[MAX_CAMERA]; //max
 };
+
+void init_camera(SystemConfig& systemConfig);
