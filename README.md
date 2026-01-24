@@ -30,10 +30,13 @@ The goal is not to ship the full reconstruction algorithm, but to demonstrate ho
 
 - `src/`
   - `main.cu` — entry point and orchestration
-  - `kernels.cu` / `kernels.h` — CUDA kernels
-- `include/`
+  - `cuda_helpers.cu` / `kernels.h` — CUDA helpers
+- `config/`
   - `camera_config.h` — camera params structures
-  - `data.h` — mesh / system structures
+  - `camera_config.cu` — camera params orchestration
+  - `camera_invariant.h` — mesh / system structures
+- `projection/`
+  - `projection.h`
 - `docs/`
   - `data_contract.md` — CPU↔GPU data contract (units, frames, invariants, versioning)
 
