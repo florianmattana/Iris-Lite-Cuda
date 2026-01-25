@@ -26,7 +26,7 @@ The goal is not to ship the full reconstruction algorithm, but to demonstrate ho
 
 ---
 
-## Repository structure (example)
+## Repository structure
 
 - `src/`
   - `main.cu` — entry point and orchestration
