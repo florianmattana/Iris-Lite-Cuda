@@ -1,4 +1,6 @@
 #pragma once
+
+#include<camera_config.h>
 #include<cuda_runtime.h>
 
 struct alignas(16) ProjectedPoint {
@@ -10,9 +12,4 @@ struct alignas(16) ProjectedPoint {
 static_assert(sizeof(ProjectedPoint) == 16);
 static_assert(alignof(ProjectedPoint) == 16);
 
-void cpu_project_points(
-    const SystemConfig& cfg,
-    const float3* points_world,
-    int num_points,
-    ProjectedPoint* out
-);
+void cpu_project_points(const SystemConfig &systemConfig, const float3 *points_world, int num_points, ProjectedPoint *out);

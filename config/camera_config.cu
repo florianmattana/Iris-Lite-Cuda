@@ -1,6 +1,7 @@
-#include<cuda_runtime.h>
 #include<camera_config.h>
 #include<camera_invariants.h>
+
+#include<cuda_runtime.h>
 
 static inline void set_identity(float R[9]) 
 {

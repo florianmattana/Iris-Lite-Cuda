@@ -1,7 +1,7 @@
 #include "camera_config.h"
 #include "camera_invariants.h"
 
-#include<iostream>
+#include <iostream>
 #include <string>
 #include <cstdlib>
 

@@ -37,6 +37,7 @@ The goal is not to ship the full reconstruction algorithm, but to demonstrate ho
   - `camera_invariant.h` — mesh / system structures
 - `projection/`
   - `projection.h`
+  - `projection.cuda`
 - `docs/`
   - `data_contract.md` — CPU↔GPU data contract (units, frames, invariants, versioning)
 
