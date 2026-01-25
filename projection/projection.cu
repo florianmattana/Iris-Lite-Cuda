@@ -4,10 +4,25 @@
 
 void cpu_project_points(const SystemConfig &systemConfig, const float3 *points_world, int num_points, ProjectedPoint *out)
 {
-//objectif = transformer les points worlds en point camera  avec P_cam = R × P_world + T
-//
-};
+    int camera_idx = 0;
+    const CameraConfig& cam = systemConfig.cameras[camera_idx];
+    const float* R = cam.rotation;
 
+    for (int i = 0; i < num_points; ++i)
+    {
+        float3 p = points_world[i];
+
+        // Monde -> caméra : P_cam = R * (P_world - C)
+        float px = p.x - cam.position.x;
+        float py = p.y - cam.position.y;
+        float pz = p.z - cam.position.z;
+
+        float X_cam = R[0]*px + R[1]*py + R[2]*pz;
+        float Y_cam = R[3]*px + R[4]*py + R[5]*pz;
+        float Z_cam = R[6]*px + R[7]*py + R[8]*pz;
+
+    }
+}
 // Étapes pour réussir la fonction cpu_project_points
 // 1. Récupérer les paramètres de la caméra depuis SystemConfig
     // Extraire la matrice de rotation R (ou les angles d'Euler)
@@ -34,3 +49,10 @@ void cpu_project_points(const SystemConfig &systemConfig, const float3 *points_w
     // Vérifier l'ordre des opérations : rotation AVANT translation
     // S'assurer que les unités sont cohérentes (mètres, pixels, etc.)
     // Gérer les points hors champ de vision si demandé
+
+
+//     Translation (position)
+// 👉 “Où est la caméra ?” (tx, ty, tz)
+
+// Rotation (orientation)
+// 👉 “Dans quelle direction elle regarde ?” et “où sont ses axes X/Y/Z ?”
